@@ -27,12 +27,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Color.Companion.Black
 import androidx.compose.ui.layout.layoutId
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
@@ -45,7 +47,9 @@ import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.ConstraintSet
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.example.driving_constraintlayout.sign_in.SignInState
 import com.example.driving_constraintlayout.ui.theme.Driving_ConstraintLayoutTheme
+
 
 @Composable
 fun LoginPage(navController: NavController){
@@ -222,6 +226,7 @@ fun LoginPage(navController: NavController){
                     navController.navigate("PublicHomePage")
                 }
             },
+
             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFA7BADC)),
             border = BorderStroke(width = 2.dp, color = Color.Black),
             shape = RoundedCornerShape(10.dp),
